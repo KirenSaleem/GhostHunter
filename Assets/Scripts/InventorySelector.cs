@@ -10,6 +10,7 @@ public class InventorySelector : MonoBehaviour
     public RectTransform keySlot;
     public EquipmentManager equipmentManager;
     public InventoryManager inventoryManager;
+    public InventoryUI inventoryUI;
 
     private int currentSlot = -1;
 
@@ -20,6 +21,9 @@ public class InventorySelector : MonoBehaviour
 
     void Update()
     {
+        if (!inventoryUI.inventoryOpen)
+            return;
+
         if (!selection.gameObject.activeSelf)
             return;
 

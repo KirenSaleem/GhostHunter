@@ -17,7 +17,7 @@ public class ClueManager : MonoBehaviour
 
     void Update()
     {
-        if (clueOpen && Input.GetKeyDown(KeyCode.S))
+        if (clueOpen && Input.GetKeyDown(KeyCode.Escape))
         {
 
             CloseClue();
@@ -57,6 +57,49 @@ public class ClueManager : MonoBehaviour
                 "swallows them forever.\n" +
                 "Do not linger...\n" +
                 "Something has already sensed your presence.";
+
+                break;
+
+            case 2:
+
+                bodyText.text =
+                "The ritual is complete...\n" +
+                "Yet I can feel His presence drawing\n" +
+                "closer with every breath.\n" +
+                "The cursed manuscript still bears His name\n" +
+                "As long as those pages remain untouched,\n" +
+                "the seal will never truly break.\n" +
+                "Burn the forbidden book...\n" +
+                "Before it begins to whisper yours.";
+
+                break;
+
+            case 3:
+
+                bodyText.text =
+                "Forgive me...\n" +
+                "I was never meant to lead another\n" +
+                "soul into this place.\n" +
+                "The Rust Key has broken the final seal.\n" +
+                "They have heard it.\n" +
+                "Their whispers will soon become footsteps.\n" +
+                "Do not let them reach you.\n" +
+                "Find the ancient door...\n" +
+                "And never look back.";
+
+                break;
+
+            case 4:
+
+                bodyText.text =
+                "The cursed pages have turned to ash...\n" +
+                "At last, the prison loosens its grip.\n" +
+                "Beneath the ashes lies the final relic...\n" +
+                "A Rusted Key, hidden from those\n" +
+                "who feared the truth.\n" +
+                "Take it.\n" +
+                "The door will not remain\n" +
+                "sealed for long.";
 
                 break;
         }

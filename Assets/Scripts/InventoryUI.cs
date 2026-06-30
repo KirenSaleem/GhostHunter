@@ -3,8 +3,7 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     public GameObject inventoryPanel;
-
-    private bool inventoryOpen = false;
+    public bool inventoryOpen = false;
 
     void Start()
     {

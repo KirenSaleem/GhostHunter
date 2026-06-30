@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     public bool hasKey = false;
     public int candlesLit = 0;
     private InventorySelector inventorySelector;
+    public ClueManager clueManager;
     public bool debugStartWithLighter = false;
     public bool debugStartWithcandle = false;
     public bool debugStartWithKey = false;
@@ -60,7 +61,7 @@ public class InventoryManager : MonoBehaviour
     {
         hasBook = true;
         bookCover.SetActive(false);
-
+        clueManager.ShowClue(4);
         inventorySelector.RefreshSelection();
     }
 
@@ -68,7 +69,7 @@ public class InventoryManager : MonoBehaviour
     {
         hasKey = true;
         keyCover.SetActive(false);
-
+        clueManager.ShowClue(3);
         inventorySelector.RefreshSelection();
     }
     public void CandleLit()
@@ -78,7 +79,7 @@ public class InventoryManager : MonoBehaviour
         if (candlesLit >= 3)
         {
             CollectCandle();
-
+            clueManager.ShowClue(3);
             Debug.Log("Lit Candle Unlocked!");
         }
     }
