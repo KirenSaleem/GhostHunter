@@ -1,19 +1,23 @@
 
+
 using UnityEngine;
 
-public class LighterPickup : MonoBehaviour
+public class KeyPickup : MonoBehaviour
 {
     public InventoryManager inventoryManager;
-    public ClueManager clueManager;
+    
+
     private bool playerNear = false;
 
     void Update()
     {
-        if (playerNear && Input.GetKeyDown(KeyCode.P))
+        if (playerNear && Input.GetKeyDown(KeyCode.P) && inventoryManager.hasBook)
         {
-            inventoryManager.CollectLighter();
-            clueManager.ShowClue(1);
-            gameObject.SetActive(false);
+            inventoryManager.CollectKey();
+
+            Destroy(gameObject);
+
+            Debug.Log("Rusty Key Collected!");
         }
     }
 
@@ -22,7 +26,7 @@ public class LighterPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNear = true;
-            Debug.Log("Press P to pick up the lighter");
+            Debug.Log("Press P to pick up the Rusty Key.");
         }
     }
 

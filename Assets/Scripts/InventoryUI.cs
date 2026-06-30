@@ -11,7 +11,7 @@ public class InventoryUI : MonoBehaviour
         inventoryPanel.SetActive(false);
     }
 
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {

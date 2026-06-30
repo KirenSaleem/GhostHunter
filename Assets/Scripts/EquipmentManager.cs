@@ -7,6 +7,7 @@ public class EquipmentManager : MonoBehaviour
     public GameObject keyInHand;
     public bool lighterEquipped = false;
     public bool candleEquipped = false;
+    public bool keyEquipped = false;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class EquipmentManager : MonoBehaviour
     public void EquipKey()
     {
         UnequipAll();
+        keyEquipped = true;
         keyInHand.SetActive(true);
     }
 
@@ -42,5 +44,6 @@ public class EquipmentManager : MonoBehaviour
 
         lighterEquipped = false;
         candleEquipped = false;
+        keyEquipped=false;
     }
 }

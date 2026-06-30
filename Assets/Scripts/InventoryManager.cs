@@ -16,6 +16,7 @@ public class InventoryManager : MonoBehaviour
     private InventorySelector inventorySelector;
     public bool debugStartWithLighter = false;
     public bool debugStartWithcandle = false;
+    public bool debugStartWithKey = false;
     private void Start()
     {
         lighterCover.SetActive(true);
@@ -24,9 +25,17 @@ public class InventoryManager : MonoBehaviour
         keyCover.SetActive(true);
 
         inventorySelector = GetComponent<InventorySelector>();
+        if (debugStartWithKey)
+        {
+            CollectKey();
+        }
         if (debugStartWithcandle)
         {
             CollectCandle();
+        }
+        if (debugStartWithLighter)
+        {
+            CollectLighter();
         }
     }
 
@@ -36,6 +45,7 @@ public class InventoryManager : MonoBehaviour
         lighterCover.SetActive(false);
 
         inventorySelector.RefreshSelection();
+        
     }
 
     public void CollectCandle()
